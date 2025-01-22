@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frgmnts</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px; /* 설명과 타이틀을 위한 공백 */
+            color: #ffffffd8;
+            background-color: #000; /* 배경색 검정 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            display: flex;
+            justify-content: center; /* 좌우 배치 */
+            align-items: center;
+            width: 100%; /* 전체 너비 */
+            position: relative;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0; /* 제목 여백 제거 */
+            text-align: center;
+    
+        }
+        .about-link {
+            font-size: 14px;
+            text-decoration: none;
+            color: #ffffffd8;
+            background-color: #494948;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            position: absolute; /* 상단 오른쪽에 위치 */
+            right: 0; /* 오른쪽 정렬 */
+        }
+        .about-link:hover {
+            background-color: #565554;
+        }
+        h1 {
+            margin-bottom: 20px; /* 타이틀 아래 공백 */
+            align-items: center;
+        }
+        .subtitle {
+            font-size: 12px; /* 제목 크기의 1/3 */
+            font-weight: 300; /* 얇은 글씨 */
+            color: #cccccc; /* 밝은 회색 */
+            margin-bottom: 20px; /* 설명과 콘텐츠 간격 */
+            text-align: center; /* 가운데 정렬 */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4개의 열 */
+            grid-gap: 10px; /* 비디오 간의 간격 */
+            width: 100%; /* 화면 너비 */
+            max-width: 1200px; /* 최대 너비 */
+        }
+        .video-container {
+            position: relative;
+            width: 100%; /* 각 셀의 너비에 맞춤 */
+            padding-top: 50%; /* 정사각형을 유지 */
+            background: #000000; /* 비디오 로드 전 배경 */
+            cursor: pointer; /* 커서 포인터 모양 */
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .message {
+            display: none; /* 초기 상태에서 숨김 */
+            position: absolute;
+            line-height: 1.6; /* 텍스트 줄 간격 설정 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* 부모 블록 크기에 맞춤 */
+            overflow-y: auto; /* 세로 스크롤 활성화 */
+            color: #fff;
+            font-size: 12px; /* 글자 크기를 더 작게 */
+            text-align: center;
+            padding: 10px; /* 텍스트 내부 여백 */
+            box-sizing: border-box; /* padding 포함 크기 계산 */
+            background: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
+        }
+        .message::-webkit-scrollbar {
+            width: 8px; /* 스크롤바 너비 */
+        }
+        .message::-webkit-scrollbar-thumb {
+            background-color: #a4a4a4; /* 스크롤바 색상 */
+            border-radius: 4px; /* 둥근 모양 */
+        }
+        .message::-webkit-scrollbar-track {
+            background-color: #333; /* 스크롤바 배경 */
+        }
+        /* 스크롤바 스타일링 */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pages (2024-)</h1>
+        <a href="about.html" class="about-link">About</a>
+    </header>
+    <p class="subtitle">Click on the video to view the text</p>
+    <div class="grid-container">
+        <!-- 16개의 비디오 -->
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-1.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">A girl I saw on a bus.<br>
+                She reminded me of ribbons and nails.<br>
+                Both meant to fix things in place.<br>
+                A nail needs a hammer,<br>
+                a ribbon, a hand to tie it.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-2.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">We ordered delivery in Thailand,
+                waiting together in the lobby.<br>
+                I think I smoked more there than anywhere else—<br>
+                Marlboro Gold, 150 baht at the convenience store,
+                <br>about 5,500 won in Korean money.</div>
+        </div> 
+        <div class="video-container" data-index="3">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-3.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">I went to School for a moment today.<br>
+                Arriving near lunchtime,<br>
+                most of the students were eating in the park.<br>
+                Sue and I bought some food from the market<br>
+                and sat in the park, too.<br>
+                A strange feeling washed over me.</div>
+        </div>
+        <div class="video-container" data-index="4">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-4.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">I think it was around 5 p.m.<br>
+                I visited a university store in Thailand with Sue,
+                and beside a fan that didn’t work,
+                a small child was sitting.<br>
+                Though the fan stayed still,
+                its shadow carried coolness.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-5.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">The sun rises from the east,
+                and now it spills into my room.<br>
+                This place is so quiet.<br>
+                This morning, I woke to the sound of hoofbeats.<br>
+                A small horse, maybe a foal?<br>
+                The horses here never run.<br>
+                The clip-clop of their steps is so precise,
+                like a machine—
+                a clock chiming the morning hour.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-6.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">The light that has penetrated the blind is reflected in every palm joint.<br>
+                The wrinkled palm lines look bright because of the sunlight.<br>
+                People predict the future by looking at the palm of their hand.<br>
+                I can't believe I can see a person's personality, emotional health, or even the overall flow of life just by looking at the lines on my palm...<br>
+                What does it feel like to leave the future to someone?</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-7.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">I woke earlier than usual today.<br>
+                Brushing my teeth, still half-dreaming.<br>
+                I was supposed to see Sue off to her atelier,
+                but the bed held me too tightly.<br>
+                After she left, I slept two more hours.<br>
+                When I was young, I loved napping,<br>
+                but now it feels like stolen time.<br>
+                Naps no longer refresh me;<br>
+                they leave me more tired,
+                a weight I can’t shake.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-8.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">Morning sunlight is like a wave.<br>
+                Today, it almost devoured my room that I hurried to pull the blinds.<br>
+                The vitality of the morning can be terrifying.<br>
+                Sunlight reveals everything:<br>
+                dark alleys, highways,<br>
+                the sky, the sea,<br>
+                even the shadows on people’s faces—<br>
+                it brightens graves, too.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-9.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">On summer nights thick with insect songs,<br>
+                I always went to the Sky Bridge.<br><br>
+                "If I leave now, I’ll catch the sunset."<br><br>
+                
+                Color is something you feel, not learn.<br>
+                The sky holds every shade I can imagine.<br>
+                Morning, noon, and evening skies—<br>
+                each one a new canvas.<br>
+                As the sun moves, the sky shifts, too.</div>
+        </div>
+        <div class="video-container" data-index="2">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-10.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message"><br>What’s on the moon<br><br>
+                that makes people spend so much to reach it?</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-11.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">I was blessed by the sky today.<br>
+                Thick clouds hung in the sky, <br>and the light was very sacred like stained glass used in medieval cathedrals.<br>
+                It is said that most of the medieval Bibles were mainly paintings.<br>
+                It was because people at that time had such a high illiteracy rate that they could not read the Bible in writing.<br>
+                There was a huge debate between Eastern and Western churches over the use of paintings in churches.<br>
+                Was it because of Moses' commandments? I don't remember exactly, but Eastern Christianity had a doctrine that required the service of a single god, so it was strictly prohibited to form and serve him.<br>
+                Even the paintings in the Bible and stained glass were considered idolatry.<br>
+                Then the Great Pope Gregorius came forward and advocated the use of biblical paintings, and after that he could write biblical paintings, but not all paintings were allowed. <br>
+                To prevent people from turning their attention to the other side, the painting strictly focused on the essence, and eventually the high-quality depictions and representations of the Roman Empire gradually declined.</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-12.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">Lying on the floor this evening, I looked at the sky for a long time.<br><br>
+                I brought an umbrella because there was a forecast that it would rain, but I could only see dark clouds and it didn't rain.<br>
+                I don't like rain because my socks are wet, but I like dark clouds.</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-13.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">The day before I left Germany for Switzerland,<br>
+                I saw a flock of birds in flight.<br>
+                As a child, I loved birds,<br>
+                chasing them endlessly,<br>
+                though I only knew sparrows and magpies.<br><br>
+                
+                Looking back,<br>
+                I think I loved their image more than the birds themselves.<br>
+                Every animal I saw lived on the ground,<br>
+                but birds belonged to the sky.<br>
+                When I flew on planes,<br>
+                I imagined being inside a bird.<br><br>
+                
+                But I stopped looking at birds with awe<br>
+                after a school lesson—<br>
+                learning they mostly ate insects.<br>
+                Even as a child,<br>
+                the sight of a bug would send me running.<br>
+                Bugs were tiny hells,<br>
+                1 cm of condensed dread.<br><br>
+                
+                Could it be that my love for birds<br>
+                was tied to my fear of bugs?<br>
+                Their shared sky<br>
+                made one evil, the other good.<br>
+                Yet, I didn’t want birds to eat bugs—<br>
+                I wanted them to conquer them,<br>
+                to rise above.<br><br>
+                
+                What does it matter now?<br>
+                Tomorrow, I’m heading back to Switzerland.</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-14.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message"><br>火田<br><br>
+                Fields of Fire.</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-15.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">The night in the industrial district<br>
+                is brighter than the inside of the train.<br><br>
+                Steam from the factories meets glaring lights,<br>
+                turning even whiter.<br>
+                Everything evaporates.<br><br>
+                
+                Moments pass by in an instant,<br>
+                whether joy or sorrow—<br>
+                turn around, and they’re already behind you.</div>
+        </div>
+        <div class="video-container" data-index="1">
+            <video autoplay loop muted playsinline>
+                <source src="my-video-16.mp4" type="video/mp4">
+                This string appears if your browser does not support video tags.
+            </video>
+            <div class="message">Fireworks are beautiful when they burst,<br>
+                but they vanish so quickly.</div>
+        </div>
+                
+            
+        <!-- 동일한 형식으로 비디오 3~16 추가 -->
+    
+       
+
+
+    <script>
+        // 모든 비디오 컨테이너 요소를 가져오기
+        const videoContainers = document.querySelectorAll('.video-container');
+
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+            const message = container.querySelector('.message');
+
+            // 초기 상태 설정
+            let isVideoVisible = true;
+
+            // 클릭 이벤트 추가
+            container.addEventListener('click', () => {
+                if (isVideoVisible) {
+                    video.style.display = 'none';
+                    message.style.display = 'block';
+                } else {
+                    video.style.display = 'block';
+                    message.style.display = 'none';
+                }
+                isVideoVisible = !isVideoVisible;
+            });
+        });
+    </script>
+
+</body><style>
+    @font-face {
+        font-family: 'Menlo';
+        src: url('menlo.woff') format('woff');
+    }
+    @font-face {
+        font-family: 'NotoSansJP';
+        src: url('NotoSansJP-Regular.ttf') format('truetype');
+    }
+    body {
+        background-color: rgb(0, 0, 0);
+        color: rgb(96, 96, 96);
+        font-family: Menlo, monospace;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    a {
+        color: rgb(96, 96, 96);
+        text-decoration: none;
+    }
+    video {
+        position: absolute;
+    }
+    #head {
+        background-color: rgba(0, 0, 0, 0.75);
+        border-bottom: 1px solid rgb(96, 96, 96);
+        height: 32px;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+    
+</html>
